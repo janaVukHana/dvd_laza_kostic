@@ -8,7 +8,7 @@ import firemanImage from '../assets/firedep/fireman_6.png';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const Section = styled.div`
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,6 +21,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 5rem;
 `
 
 const Left = styled.div`
