@@ -68,7 +68,7 @@ const Donations = () => {
 
     return (
         <Section id='donations' ref={ref}>
-            <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true}>
+          <AnimationOnScroll animateIn="animate__fadeInUp" animateOut="animate__fadeOutDown">
                 <Container>
                     <Title>Donacije - Podržite Dobrovoljno Vatrogasno Društvo!</Title>
                     <Paragraph>

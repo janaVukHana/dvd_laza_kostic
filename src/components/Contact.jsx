@@ -193,7 +193,7 @@ const Contact = () => {
     <Section id="contact" ref={ref}>
       <Container>
         <Left>
-          <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true}>
+          <AnimationOnScroll animateIn="animate__fadeInUp" animateOut="animate__fadeOutDown">
             <Form ref={formRef} onSubmit={handleSubmit}>
                 <Title>Kontakt</Title>
               

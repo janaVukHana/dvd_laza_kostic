@@ -124,7 +124,7 @@ const Gallery =() => {
     return (
         <Section id='gallery' ref={ref}>
             <Container>
-            <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true}>
+            <AnimationOnScroll animateIn="animate__fadeInUp" animateOut="animate__fadeOutDown">
 
                 <ImageList
                     sx={{ width: '95%', height: 'auto', maxWidth: 600 }}

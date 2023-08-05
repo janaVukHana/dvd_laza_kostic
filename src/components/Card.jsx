@@ -54,7 +54,7 @@ const CardText = styled.p`
 
 const Card = ({icon, title,  desc}) => {
     return (
-        <AnimatedCardContainer animateIn="animate__fadeInUp" animateOnce={true}>
+        <AnimatedCardContainer animateIn="animate__fadeInUp" animateOut="animate__fadeOutDown">
             <CardStyle>
                 <IconSpan>{icon}</IconSpan>
                 <CardHeading>{title}</CardHeading>
