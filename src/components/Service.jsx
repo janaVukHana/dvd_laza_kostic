@@ -8,27 +8,28 @@ import HomeSharpIcon from '@mui/icons-material/HomeSharp';
 import FireHydrantAltIcon from '@mui/icons-material/FireHydrantAlt';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import SchoolIcon from '@mui/icons-material/School';
+import { cyan } from '@mui/material/colors';
 
 import bgImage from '../assets/firedep/equipment_2.png';
 
 const cardInfo = [
   {
-    icon: <FireHydrantAltIcon color="primary" />,
+    icon: <FireHydrantAltIcon sx={{ color: cyan[900] }} />,
     title: 'Gašenje požara',
     desc: 'Gašenje različitih vrsta požara, uključujući požare u zgradama, vozilima, šumske požare i druge hitne situacije.'
   },
   {
-    icon: <LocalHospitalIcon color="primary" />,
+    icon: <LocalHospitalIcon sx={{ color: cyan[900] }} />,
     title: 'Hitna medicinska pomoć',
     desc: 'Pružanje osnovnih hitnih medicinskih usluga i prve pomoći do dolaska ambulante.'
   },
   {
-    icon: <HomeSharpIcon color="primary" />,
+    icon: <HomeSharpIcon sx={{ color: cyan[900] }} />,
     title: 'Spašavanje i evakuacija',
     desc: 'Operacije spašavanja u slučajevima prometnih nesreća, spašavanje iz poplava, evakuacije ljudi iz opasnih situacija i druge vrste tehničkih spašavanja.'
   },
   {
-    icon: <SchoolIcon color="primary" />,
+    icon: <SchoolIcon sx={{ color: cyan[900] }} />,
     title: 'Obuka i edukacija',
     desc: 'Organizovani programi obuke i edukacije za građane, učenike i druge organizacije o sigurnosnim merama, pružanju prve pomoći i drugim hitnim postupcima.'
   },
