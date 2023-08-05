@@ -4,6 +4,8 @@ import { createContext, useContext, useState, useEffect } from "react";
 const StateContext = createContext({
     active: null,
     setActive: () => {},
+    showMenu: null,
+    setShowMenu: () => {},
     // loading: null,
     // setLoading: () => {}
 })
@@ -12,6 +14,7 @@ const StateContext = createContext({
 export const ContextProvider = ({children}) => {
 
     const [active, setActive] = useState('home')
+    const [showMenu, setShowMenu] = useState(false)
     
     // const [loading, setLoading] = useState(false)
 
@@ -19,6 +22,8 @@ export const ContextProvider = ({children}) => {
         <StateContext.Provider value={{
             active,
             setActive,
+            showMenu,
+            setShowMenu
             // loading,
             // setLoading
         }}>

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { useStateContext } from '../contexts/ContextProvider';
 
 const Img = styled.img`
     width: 50px;
@@ -6,8 +7,14 @@ const Img = styled.img`
 `
 
 const Logo = () => {
+    const {showMenu, setShowMenu} = useStateContext()
+
+    const handleClick = () => {
+        if(window.innerWidth < 768) setShowMenu(false)
+    }
+
     return (
-        <a href="#home">
+        <a href="#home" onClick={handleClick}>
             <Img src="img/logo.png" alt="logo" />
         </a>
     )

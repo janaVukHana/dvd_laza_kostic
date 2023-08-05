@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Logo from './Logo'
 import NavbarMenu from './NavbarMenu'
+import Hamburger from './Hamburger'
 
 const Section = styled.div`
     position: fixed;
@@ -30,6 +31,7 @@ const Navbar = () => {
             <Container>
                 <Logo />
                 <NavbarMenu />
+                <Hamburger />
             </Container>
         </Section>
     )
