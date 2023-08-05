@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { useStateContext } from '../contexts/ContextProvider';
 import { useRef, useState, useEffect } from 'react';
 

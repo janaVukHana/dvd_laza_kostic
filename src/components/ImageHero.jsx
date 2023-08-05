@@ -27,6 +27,9 @@ const ImageHero = () => {
             else if(active === 'donations') setImagaSizeAndPositions(prevVal => {
                 return {...prevVal, width: '10%', right: '0%'}
             })
+            else if(active === 'gallery') setImagaSizeAndPositions(prevVal => {
+                return {...prevVal, width: '15%', right: '0%'}
+            })
             else if(active === 'contact') setImagaSizeAndPositions(prevVal => {
                 return {...prevVal, width: '50%', right: '40%'}
             })

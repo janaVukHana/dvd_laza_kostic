@@ -30,6 +30,7 @@ const NavbarMenu = () => {
             <li><Link href="#home" className={active === 'home' ? 'active':''}>Pocetna</Link></li>
             <li><Link href="#service" className={active === 'service' ? 'active':''}>Aktivnosti</Link></li>
             <li><Link href="#donations" className={active === 'donations' ? 'active':''}>Donacije</Link></li>
+            <li><Link href="#gallery" className={active === 'gallery' ? 'active':''}>Galerija</Link></li>
             <li><Link href="#contact" className={active === 'contact' ? 'active':''}>Kontakt</Link></li>
         </List>
     )
