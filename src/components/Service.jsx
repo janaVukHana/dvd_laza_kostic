@@ -34,10 +34,11 @@ const cardInfo = [
 
 const Section = styled.div`
   min-height: 100vh;
+  padding-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5rem;
+  background-color: purple;
 `
 
 const Container = styled.div`
