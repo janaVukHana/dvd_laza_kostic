@@ -46,15 +46,16 @@ const NavbarMenu = () => {
             document.body.style.overflow = 'visible'
           }
         }
+        
+        window.addEventListener('resize', (e) => {
+            if(window.innerWidth > 768) {
+                setShowMenu(true)
+            } else {
+              setShowMenu(false)
+            }
+        })
       }, [showMenu])
 
-          window.addEventListener('resize', (e) => {
-              if(window.innerWidth > 768) {
-                  setShowMenu(true)
-              } else {
-                setShowMenu(false)
-              }
-          })
 
     const handleClick = () => {
         if(window.innerWidth <= 768) {
@@ -62,11 +63,12 @@ const NavbarMenu = () => {
         }
       }
 
+    console.log('showMenu: ',showMenu);
+
     return (
         <>
             {showMenu && 
                 <List>
-                    
                     <ListItem><Link onClick={handleClick} href="#home" className={active === 'home' ? 'active':''}>Pocetna</Link></ListItem>
                     <ListItem><Link onClick={handleClick} href="#service" className={active === 'service' ? 'active':''}>Aktivnosti</Link></ListItem>
                     <ListItem><Link onClick={handleClick} href="#donations" className={active === 'donations' ? 'active':''}>Donacije</Link></ListItem>

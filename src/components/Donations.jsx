@@ -14,6 +14,7 @@ const Section = styled.div`
     position: relative;
     z-index: -2;
     padding-top: 5rem;
+    padding-bottom: 3rem;
 `
 
 const Container = styled.div`
@@ -69,7 +70,7 @@ const Donations = () => {
 
     return (
         <Section id='donations' ref={ref}>
-            <AnimationOnScroll animateIn="animate__fadeInUp" animateOut="animate__fadeOutDown">
+            <AnimationOnScroll animateIn="animate__fadeInRight" animateOut="animate__fadeOutRight">
                 <Container>
                     <Title>Donacije - Podržite Dobrovoljno Vatrogasno Društvo!</Title>
                     <Paragraph>

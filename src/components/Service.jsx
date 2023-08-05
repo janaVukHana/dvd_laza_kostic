@@ -37,6 +37,7 @@ const cardInfo = [
 const Section = styled.div`
   min-height: 100vh;
   padding-top: 5rem;
+  padding-bottom: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;

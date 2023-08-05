@@ -14,7 +14,12 @@ const StateContext = createContext({
 export const ContextProvider = ({children}) => {
 
     const [active, setActive] = useState('home')
-    const [showMenu, setShowMenu] = useState(false)
+    const [showMenu, setShowMenu] = useState(() => {
+        if(window.innerWidth > 768) {
+            return true
+        }
+        return false
+    })
     
     // const [loading, setLoading] = useState(false)
 
