@@ -9,6 +9,8 @@ import FireHydrantAltIcon from '@mui/icons-material/FireHydrantAlt';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import SchoolIcon from '@mui/icons-material/School';
 
+import bgImage from '../assets/firedep/equipment_2.png';
+
 const cardInfo = [
   {
     icon: <FireHydrantAltIcon color="primary" />,
@@ -38,8 +40,12 @@ const Section = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: purple;
-`
+  background-color: #008080;
+  background-image: linear-gradient(#008080, #fff);
+  // background-color: purple;
+  // background: #f2f2f2 url(${bgImage}) no-repeat center;
+  // background-size: cover;
+  `
 
 const Container = styled.div`
     width: 95%;

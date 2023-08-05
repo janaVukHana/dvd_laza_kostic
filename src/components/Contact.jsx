@@ -8,6 +8,8 @@ import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const Section = styled.div`
   height: 100vh;
+  background-color: #008080;
+  background-image: linear-gradient(#008080, #fff);
 `
 
 const Container = styled.div`
@@ -41,6 +43,8 @@ const Title = styled.h2`
 `
 
 const Form = styled.form`
+  position: relative;
+  z-index: 6;
   width: 100%;
   max-width: 450px;
   padding: 1rem;

@@ -7,7 +7,7 @@ const Section = styled.div`
     top: 0;
     left: 0;
     z-index: 999;
-    background-color: rgba(0, 128, 128, 0.1);
+    background-color: rgba(0, 128, 128, 0.5);
     width: 100%;
     display: flex;
     justify-content: center;

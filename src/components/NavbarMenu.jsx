@@ -10,10 +10,11 @@ const Link = styled.a`
     padding: 0.5rem 1rem;
     margin-left: 3px;
     text-decoration: none;
-    color: #242424;
+    color: #fff;
+    font-weight: 700;
 
     &:hover, &.active {
-        border-bottom: 2px solid #242424;
+        border-bottom: 3px solid #fff;
     }
 
     @media (max-width: 768px) {

@@ -4,14 +4,15 @@ import { useRef, useState, useEffect } from 'react';
 
 import ImageHero from "./ImageHero";
 
-import firemanImage from '../assets/firedep/fireman_6.png';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const Section = styled.div`
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #008080;
+    background-image: linear-gradient(#008080, #fff);
 `
 
 const Container = styled.div`
@@ -21,7 +22,6 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5rem;
 `
 
 const Left = styled.div`
@@ -31,7 +31,7 @@ const Left = styled.div`
 const Title = styled.h1`
     font-family: 'Playfair Display', serif;
     font-size: 3.6rem;
-    color: #000;
+    color: #fff;
 
     @media (max-width: 768px) {
         font-size: 2rem;
@@ -41,7 +41,7 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
     font-size: 1.2rem;
     font-weight: 400;
-    color: #333;
+    color: #fff;
     margin-bottom: 3rem;
 
     @media (max-width: 768px) {
@@ -51,7 +51,7 @@ const Subtitle = styled.h2`
 
 const Desc = styled.p`
     font-size: 1.4rem;
-    color: #333;
+    color: #fff;
     margin-bottom: 2.5rem;
 
     @media (max-width: 768px) {
@@ -77,38 +77,19 @@ const Button = styled.a`
     }
 `
 
-// const Right = styled.div`
-//     flex: 3;
-//     position: relative;
-//     height: 100%;
-// `
-
-const Img = styled.img`
-    width: 40%;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    transition: 2s linear opacity;
-`
-
 const Home = () => {
     // Fixing on page load animation
     const [shouldAnimatePreScroll, setShouldAnimatePreScroll] = useState(false);
-    const [imageOpacity, setImageOpacity] = useState(0)
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setShouldAnimatePreScroll(true);
         }, 1);
 
-        setTimeout(() => {
-            setImageOpacity(1)
-        }, 1000)
-
         return () => clearTimeout(timer);
     }, []);
 
-    const { active, setActive } = useStateContext();
+    const { setActive } = useStateContext();
     const ref = useRef();
 
 

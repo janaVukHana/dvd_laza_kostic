@@ -1,26 +1,22 @@
 import { useEffect, useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { useStateContext } from '../contexts/ContextProvider';
 import firemanImage from '../assets/firedep/fireman.png';
 
 const Img = styled.img`
-    // width: 40%;
-    // position: fixed;
-    // bottom: 0;
-    // right: 0;
-    // z-index: -1;
+    opacity: 0;
     transition: 1s linear;
 `
 
 const ImageHero = () => {
-    const { active, setActive } = useStateContext();
+    const { active } = useStateContext();
     const [imageOpacity, setImageOpacity] = useState(0)
     const [imageSizeAndPosition, setImagaSizeAndPositions] = useState({
         width: '40%',
         position: 'fixed',
         bottom: 0,
         right: 0,
-        zIndex: '-1'
+        zIndex: '5'
     })
 
     useEffect(() => {
@@ -38,6 +34,7 @@ const ImageHero = () => {
                 return {...prevVal, width: '40%', right: 0}
             })
             
+            // Change image opacity. Transition is 1sec
             setImageOpacity(1)
         }, 1000)
 
