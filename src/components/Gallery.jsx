@@ -3,6 +3,7 @@ import { useStateContext } from '../contexts/ContextProvider';
 import { useRef, useEffect } from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const itemData = [
     {
@@ -123,9 +124,10 @@ const Gallery =() => {
     return (
         <Section id='gallery' ref={ref}>
             <Container>
-                {/* <h2>Gallery</h2> */}
+            <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true}>
+
                 <ImageList
-                    sx={{ width: 600, height: 'auto' }}
+                    sx={{ width: '95%', height: 'auto', maxWidth: 600 }}
                     variant="quilted"
                     cols={4}
                     rowHeight={121}
@@ -140,6 +142,7 @@ const Gallery =() => {
                             </ImageListItem>
                         ))}
                 </ImageList>
+                </AnimationOnScroll>
             </Container>
         </Section>
     )

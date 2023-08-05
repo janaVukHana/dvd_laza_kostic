@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useStateContext } from '../contexts/ContextProvider';
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 // Components
 import Card from "./Card";
 // Mui Icons

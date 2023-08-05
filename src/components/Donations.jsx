@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useRef } from "react";
 import { useStateContext } from '../contexts/ContextProvider';
-import fireEquipmentImage from '../assets/firedep/equipment_1.png';
-
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const Section = styled.div`
     min-height: 100vh;
@@ -69,26 +68,28 @@ const Donations = () => {
 
     return (
         <Section id='donations' ref={ref}>
-            <Container>
-                <Title>Donacije - Podržite Dobrovoljno Vatrogasno Društvo!</Title>
-                <Paragraph>
-                    Hvala vam što razmatrate da podržite naše Dobrovoljno vatrogasno društvo! 
-                    Vaše donacije igraju ključnu ulogu u našoj sposobnosti da zaštitimo našu 
-                    zajednicu od požara i drugih opasnosti.
-                </Paragraph>
-                <Paragraph>
-                    <Span>Ako želite donirati, evo broja našeg računa na koji možete uplatiti svoj prilog:</Span><br />
-                    Broj računa: [Unesite broj računa]
-                </Paragraph>
-                <Paragraph>
-                    Svaka vaša donacija će biti iskorišćena za nabavku opreme, obuku naših 
-                    vatrogasaca i unapređenje naše vatrogasne infrastrukture.
-                </Paragraph>
-                <Paragraph>
-                    Još jednom, hvala vam na podršci! Vaša pomoć je neprocenjiva i pomaže nam 
-                    da održimo sigurnost i dobrobit naše lokalne zajednice.
-                </Paragraph>
-            </Container>
+            <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true}>
+                <Container>
+                    <Title>Donacije - Podržite Dobrovoljno Vatrogasno Društvo!</Title>
+                    <Paragraph>
+                        Hvala vam što razmatrate da podržite naše Dobrovoljno vatrogasno društvo! 
+                        Vaše donacije igraju ključnu ulogu u našoj sposobnosti da zaštitimo našu 
+                        zajednicu od požara i drugih opasnosti.
+                    </Paragraph>
+                    <Paragraph>
+                        <Span>Ako želite donirati, evo broja našeg računa na koji možete uplatiti svoj prilog:</Span><br />
+                        Broj računa: [Unesite broj računa]
+                    </Paragraph>
+                    <Paragraph>
+                        Svaka vaša donacija će biti iskorišćena za nabavku opreme, obuku naših 
+                        vatrogasaca i unapređenje naše vatrogasne infrastrukture.
+                    </Paragraph>
+                    <Paragraph>
+                        Još jednom, hvala vam na podršci! Vaša pomoć je neprocenjiva i pomaže nam 
+                        da održimo sigurnost i dobrobit naše lokalne zajednice.
+                    </Paragraph>
+                </Container>
+            </AnimationOnScroll>
         </Section>
     )
 }

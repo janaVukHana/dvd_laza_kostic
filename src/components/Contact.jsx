@@ -27,6 +27,8 @@ const Container = styled.div`
   }
 `
 const Left = styled.div`
+  position: relative;
+  z-index: 6;
   flex: 1;
   display: flex;
   justify-content: flex-end;
@@ -43,8 +45,6 @@ const Title = styled.h2`
 `
 
 const Form = styled.form`
-  position: relative;
-  z-index: 6;
   width: 100%;
   max-width: 450px;
   padding: 1rem;
@@ -193,21 +193,21 @@ const Contact = () => {
     <Section id="contact" ref={ref}>
       <Container>
         <Left>
-          <Form ref={formRef} onSubmit={handleSubmit}>
-            <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true}>
-              <Title>Kontakt</Title>
-            
-              <Input placeholder="Ime" name="name" />
-              <Input type="email" placeholder="Email" name="email" />
-              <Textarea placeholder="Napiši poruku" rows="7" name="message" />
-              <CheckboxWrapper>
-                <CheckboxInput type="checkbox" name="checkbox" value='Zelim da postanem clan DVD' />
-                <CheckboxLabel>Zelim da postanem dobrovoljni vatrogasac.</CheckboxLabel>
-              </CheckboxWrapper>
-              <Button>Pošalji</Button>
-              {success && <Notification />}
-            </AnimationOnScroll>
-          </Form>
+          <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true}>
+            <Form ref={formRef} onSubmit={handleSubmit}>
+                <Title>Kontakt</Title>
+              
+                <Input placeholder="Ime" name="name" />
+                <Input type="email" placeholder="Email" name="email" />
+                <Textarea placeholder="Napiši poruku" rows="7" name="message" />
+                <CheckboxWrapper>
+                  <CheckboxInput type="checkbox" name="checkbox" value='Zelim da postanem clan DVD' />
+                  <CheckboxLabel>Zelim da postanem dobrovoljni vatrogasac.</CheckboxLabel>
+                </CheckboxWrapper>
+                <Button>Pošalji</Button>
+                {success && <Notification />}
+            </Form>
+          </AnimationOnScroll>
         </Left>
         <Right>
           <NoviSadMap />
