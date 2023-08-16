@@ -13,6 +13,7 @@ const Section = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(5px);
 
 `
 
