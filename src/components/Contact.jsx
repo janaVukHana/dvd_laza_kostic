@@ -6,7 +6,7 @@ import NoviSadMap from "./NoviSadMap";
 import Notification from './Notification'
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 
-const Section = styled.div`
+const Section = styled.section`
   height: 100vh;
   background-color: #008080;
   background-image: linear-gradient(#008080, #fff);

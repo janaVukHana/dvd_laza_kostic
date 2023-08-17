@@ -6,7 +6,7 @@ import ImageHero from "./ImageHero";
 
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 
-const Section = styled.div`
+const Section = styled.section`
     min-height: 100vh;
     display: flex;
     align-items: center;

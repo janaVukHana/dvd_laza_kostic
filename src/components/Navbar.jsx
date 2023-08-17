@@ -3,7 +3,7 @@ import Logo from './Logo'
 import NavbarMenu from './NavbarMenu'
 import Hamburger from './Hamburger'
 
-const Section = styled.div`
+const Section = styled.nav`
     position: fixed;
     top: 0;
     left: 0;

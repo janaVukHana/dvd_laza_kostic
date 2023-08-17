@@ -75,7 +75,7 @@ function srcset(image, size, rows = 1, cols = 1) {
   };
 }
 
-const Section = styled.div`
+const Section = styled.section`
     min-height: 100vh;
     display: flex;
     align-items: center;

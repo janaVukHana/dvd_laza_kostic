@@ -35,7 +35,7 @@ const cardInfo = [
   },
 ]
 
-const Section = styled.div`
+const Section = styled.section`
   min-height: 100vh;
   padding-top: 5rem;
   padding-bottom: 3rem;
