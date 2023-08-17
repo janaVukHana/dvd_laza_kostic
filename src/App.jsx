@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import Home from './components/Home'
 import Service from './components/Service'
 import Donations from './components/Donations'
@@ -23,6 +24,7 @@ function App() {
         <Gallery />
         <Contact />
       </Container>
+      <Footer />
     </div>
   );
 }
