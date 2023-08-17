@@ -57,6 +57,10 @@ const Container = styled.div`
     flex-wrap: wrap;
     justify-content: start;
     align-items: stretch;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+  }
 `
 
 const Service = () => {

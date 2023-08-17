@@ -92,7 +92,6 @@ const Home = () => {
     const { setActive } = useStateContext();
     const ref = useRef();
 
-
     useEffect(() => {
         const id = document.getElementById('home').id;
         const observer = new IntersectionObserver(

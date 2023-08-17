@@ -15,6 +15,7 @@ const Section = styled.section`
     z-index: -2;
     padding-top: 5rem;
     padding-bottom: 3rem;
+    overflow: hidden;
 `
 
 const Container = styled.div`
@@ -41,30 +42,29 @@ const Span = styled.span`
 `
 
 const Donations = () => {
-    const {active, setActive} = useStateContext()
+    const { setActive } = useStateContext()
     const ref = useRef();
 
     useEffect(() => {
-
-        const id = document.getElementById('donations').id
+        const id = document.getElementById("donations").id
         const observer = new IntersectionObserver(
-        ([entry]) => {
-            entry.isIntersecting && setActive(id);
-        },
-        {
-            rootMargin: "0px",
-            threshold: 0.5 // Change this threshold value as per your requirement
-        }
+            ([entry]) => {
+                entry.isIntersecting && setActive(id);
+            },
+            {
+                rootMargin: "0px",
+                threshold: 0.5 // Change this threshold value as per your requirement
+            }
         );
 
         if (ref.current) {
-        observer.observe(ref.current);
+            observer.observe(ref.current);
         }
 
         return () => {
-        if (ref.current) {
-            observer.unobserve(ref.current);
-        }
+            if (ref.current) {
+                observer.unobserve(ref.current);
+            }
         };
     }, []);
 
@@ -80,7 +80,7 @@ const Donations = () => {
                     </Paragraph>
                     <Paragraph>
                         <Span>Ako želite donirati, evo broja našeg računa na koji možete uplatiti svoj prilog:</Span><br />
-                        Broj računa: [Unesite broj računa]
+                        <span style={{backgroundColor: '#DC143C' ,padding: '5px', borderRadius: '5px'}}>Broj računa: [Unesite broj računa]</span>
                     </Paragraph>
                     <Paragraph>
                         Svaka vaša donacija će biti iskorišćena za nabavku opreme, obuku naših 
