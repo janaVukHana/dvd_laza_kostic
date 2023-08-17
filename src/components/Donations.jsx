@@ -3,6 +3,8 @@ import { useEffect, useRef } from "react";
 import { useStateContext } from '../contexts/ContextProvider';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 
+import SavingsIcon from '@mui/icons-material/Savings';
+
 const Section = styled.section`
     min-height: 100vh;
     display: flex;
@@ -39,6 +41,17 @@ const Paragraph = styled.p`
 
 const Span = styled.span`
     font-weight: 700;
+`
+
+const SpanAccount = styled.span`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DC143C;
+    padding: 5px;
+    border-radius: 5px;
+    max-width: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7); 
 `
 
 const Donations = () => {
@@ -80,14 +93,14 @@ const Donations = () => {
                     </Paragraph>
                     <Paragraph>
                         <Span>Ako želite donirati, evo broja našeg računa na koji možete uplatiti svoj prilog:</Span><br />
-                        <span style={{backgroundColor: '#DC143C' ,padding: '5px', borderRadius: '5px'}}>Broj računa: [Unesite broj računa]</span>
+                        <SpanAccount><SavingsIcon /> &nbsp;&nbsp;&nbsp; Broj računa: [Unesite broj računa]</SpanAccount>
                     </Paragraph>
                     <Paragraph>
                         Svaka vaša donacija će biti iskorišćena za nabavku opreme, obuku naših 
                         vatrogasaca i unapređenje naše vatrogasne infrastrukture.
                     </Paragraph>
                     <Paragraph>
-                        Još jednom, hvala vam na podršci! Vaša pomoć je neprocenjiva i pomaže nam 
+                        Još jednom, <Span>hvala vam na podršci!</Span> Vaša pomoć je neprocenjiva i pomaže nam 
                         da održimo sigurnost i dobrobit naše lokalne zajednice.
                     </Paragraph>
                 </Container>

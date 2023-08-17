@@ -6,6 +6,8 @@ import NoviSadMap from "./NoviSadMap";
 import Notification from './Notification'
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 
+import ForwardIcon from '@mui/icons-material/Forward';
+
 const Section = styled.section`
   height: 100vh;
   background-color: #008080;
@@ -54,6 +56,7 @@ const Form = styled.form`
   flex-direction: column;
   gap: 16px;
   background-color: rgba(0,128,128,0.3);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7); 
 
   @media (max-width: 992px) {
     width: 95%;
@@ -95,6 +98,9 @@ const CheckboxLabel = styled.label`
   color: #242424;
   font-weight: 700;
   margin-left: 0.5rem;
+  background-color: rgba(255,255,255,0.3);
+  padding: 5px; 
+  border-radius: 5px;
 `
 
 const CheckboxInput = styled.input`
@@ -111,6 +117,10 @@ const Button = styled.button`
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7); 
   transition: 0.25s ease all;
 
   &:hover {
@@ -206,7 +216,7 @@ const Contact = () => {
                   <CheckboxInput type="checkbox" name="checkbox" value='Zelim da postanem clan DVD' />
                   <CheckboxLabel>Želim da postanem dobrovoljni vatrogasac.</CheckboxLabel>
                 </CheckboxWrapper>
-                <Button>Pošalji</Button>
+                <Button><ForwardIcon /> Pošalji</Button>
                 {success && <Notification />}
             </Form>
           </AnimationOnScroll>

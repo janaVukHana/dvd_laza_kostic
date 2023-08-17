@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useStateContext } from '../contexts/ContextProvider';
 import { useRef, useState, useEffect } from 'react';
+import TouchAppIcon from '@mui/icons-material/TouchApp';
 
 import ImageHero from "./ImageHero";
 
@@ -32,7 +33,7 @@ const Title = styled.h1`
     font-family: 'Playfair Display', serif;
     font-size: 3.6rem;
     color: #fff;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     @media (max-width: 768px) {
         font-size: 2rem;
@@ -53,7 +54,7 @@ const Subtitle = styled.h2`
 const Desc = styled.p`
     font-size: 1.4rem;
     color: #fff;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
 
     @media (max-width: 768px) {
         font-size: 1rem;
@@ -69,6 +70,11 @@ const Button = styled.a`
     border-radius: 5px;
     padding: 0.5rem 1rem;
     cursor: pointer;
+    display: flex;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7); 
     transition: 0.25s ease all;
 
     &:hover {
@@ -135,7 +141,7 @@ const Home = () => {
                         </Desc>
                     </AnimationOnScroll>
                     <AnimationOnScroll animateIn="animate__fadeInUpBig" delay={1000} animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>
-                        <Button href="#contact">Pridruži nam se!</Button>
+                        <Button href="#contact"><TouchAppIcon /> Pridruži nam se!</Button>
                     </AnimationOnScroll>
                 </Left>
                 <ImageHero />
