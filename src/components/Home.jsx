@@ -32,6 +32,7 @@ const Title = styled.h1`
     font-family: 'Playfair Display', serif;
     font-size: 3.6rem;
     color: #fff;
+    margin-bottom: 2rem;
 
     @media (max-width: 768px) {
         font-size: 2rem;
@@ -52,7 +53,7 @@ const Subtitle = styled.h2`
 const Desc = styled.p`
     font-size: 1.4rem;
     color: #fff;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
 
     @media (max-width: 768px) {
         font-size: 1rem;

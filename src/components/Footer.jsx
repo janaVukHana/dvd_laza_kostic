@@ -45,7 +45,15 @@ const ParagraphCopy = styled.p`
     color: #fff;
     text-align: center;
     position: relative;
+    width: 100%;
     z-index: 11;
+`
+
+const Divider = styled.div`
+    background-color: #fff;
+    height: 2px;
+    width: 80%;
+    margin: 1rem 0;
 `
 
 const Footer = () => {
@@ -58,7 +66,7 @@ const Footer = () => {
                     <li><ItemLink href="#" target="_blank"><FacebookIcon /></ItemLink></li>
                 </List>
             </Container>
-
+            <Divider></Divider>
             <Container>
                 <ParagraphCopy>© 2023 Ilija Radovanović * Made with ♥ & ☕ in Novi Sad, Budva and Belgrade.</ParagraphCopy>
             </Container>
