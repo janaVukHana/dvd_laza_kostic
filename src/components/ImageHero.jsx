@@ -34,7 +34,7 @@ const ImageHero = () => {
                 return {...prevVal, width: '50%', right: '40%'}
             })
             else if(active === 'home') setImagaSizeAndPositions(prevVal => {
-                return {...prevVal, width: '40%', right: 0}
+                return {...prevVal, width: '50%', right: 0}
             })
             
             // Change image opacity. Transition is 1sec

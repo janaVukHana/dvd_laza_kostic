@@ -202,7 +202,7 @@ const Contact = () => {
                 <Textarea placeholder="Napiši poruku" rows="7" name="message" />
                 <CheckboxWrapper>
                   <CheckboxInput type="checkbox" name="checkbox" value='Zelim da postanem clan DVD' />
-                  <CheckboxLabel>Zelim da postanem dobrovoljni vatrogasac.</CheckboxLabel>
+                  <CheckboxLabel>Želim da postanem dobrovoljni vatrogasac.</CheckboxLabel>
                 </CheckboxWrapper>
                 <Button>Pošalji</Button>
                 {success && <Notification />}
