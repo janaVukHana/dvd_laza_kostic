@@ -52,6 +52,10 @@ const SpanAccount = styled.span`
     border-radius: 5px;
     max-width: 50%;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7); 
+
+    @media(max-width: 768px) {
+        max-width: 100%;
+    }
 `
 
 const Donations = () => {
