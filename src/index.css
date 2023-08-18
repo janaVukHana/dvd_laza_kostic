@@ -69,6 +69,14 @@ button:focus {
   border-color: var(--danger);
 }
 
+/* Styles for navbar links */
+nav ul:hover li {
+  filter: blur(3px);
+}
+
+nav ul li:hover {
+  filter: blur(0px);
+}
 
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
