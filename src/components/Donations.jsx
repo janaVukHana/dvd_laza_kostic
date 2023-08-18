@@ -27,7 +27,7 @@ const Container = styled.div`
     max-width: 992px;
     padding: 1rem;
     border-radius: 6px;
-    background-color: rgba(0,0,0,0.2)
+    background-color: rgba(0,128,128, 0.7);
 `
 
 const Title = styled.h2`

@@ -53,6 +53,7 @@ const Subtitle = styled.h2`
 
 const Desc = styled.p`
     font-size: 1.4rem;
+    font-weight: 700;
     color: #fff;
     margin-bottom: 2.5rem;
 
@@ -82,6 +83,14 @@ const Button = styled.a`
         border-color: #008080;
         background-color: #fff;
     }
+`
+
+const SpanColor = styled.span`
+    color: #008080;
+`
+
+const SpanFontWeight = styled.span`
+    font-weight: 700;
 `
 
 const Home = () => {
@@ -127,17 +136,21 @@ const Home = () => {
             <Container>
                 <Left>
                     <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>
-                        <Title>DVD&nbsp;dr&nbsp;Laza&nbsp;Kostić</Title>
+                        <Title>DVD&nbsp;<span style={{color: '#008080'}}>dr&nbsp;Laza&nbsp;Kostić</span></Title>
                     </AnimationOnScroll>
                     <AnimationOnScroll animateIn="animate__fadeInUp" delay={500} animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>
-                        <Subtitle>Dobrovoljno Vatrogasno Društvo - Novi Sad</Subtitle>
+                        <Subtitle>
+                            <SpanFontWeight>D</SpanFontWeight>obrovoljno&nbsp;
+                            <SpanFontWeight>V</SpanFontWeight>atrogasno&nbsp;
+                            <SpanFontWeight>D</SpanFontWeight>ruštvo&nbsp;
+                            - Novi Sad</Subtitle>
                     </AnimationOnScroll>
                     <AnimationOnScroll animateIn="animate__fadeInUp" delay={1000} animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>
                         <Desc>
-                            Bezbednost zajednice. Humanost. Akcija.<br /> 
-                            Solidarnost. Pomoć drugima.<br />
-                            Adrenalinski izazov. Služenje zajednici.<br />
-                            Bezbednost zajednice. Sigurnost.<br />
+                            Bezbednost zajednice. <SpanColor>Humanost.</SpanColor> Akcija.<br /> 
+                            Solidarnost. <SpanColor>Pomoć drugima.</SpanColor><br />
+                            <SpanColor>Adrenalinski izazov.</SpanColor> Služenje zajednici.<br />
+                            Bezbednost zajednice. <SpanColor>Sigurnost.</SpanColor><br />
                         </Desc>
                     </AnimationOnScroll>
                     <AnimationOnScroll animateIn="animate__fadeInUpBig" delay={1000} animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>

@@ -58,7 +58,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(0,128,128,0.2);
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7); 
 
   @media (max-width: 992px) {
