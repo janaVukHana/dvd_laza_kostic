@@ -46,7 +46,8 @@ const Left = styled.div`
 
 const Title = styled.h2`
   font-size: 3rem;
-  color: #fff;
+  text-align: center;
+  color: #008080;
 `
 
 const Form = styled.form`
@@ -58,7 +59,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background-color: rgba(0,128,128,0.2);
+  background-color: rgba(255,255,255,0.8);
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7); 
 
   @media (max-width: 992px) {
