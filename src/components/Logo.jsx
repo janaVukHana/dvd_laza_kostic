@@ -1,9 +1,19 @@
 import styled from 'styled-components'
 import { useStateContext } from '../contexts/ContextProvider';
+import WhatshotIcon from '@mui/icons-material/Whatshot';
 
 const Img = styled.img`
     width: 50px;
     height: 50px;
+`
+
+const Link = styled.a`
+    color: #fff;
+    transition: 0.2s linear all;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 `
 
 const Logo = () => {
@@ -14,9 +24,10 @@ const Logo = () => {
     }
 
     return (
-        <a href="#home" onClick={handleClick}>
-            <Img src="img/logo.png" alt="logo" />
-        </a>
+        <Link href="#home" onClick={handleClick}>
+            {/* <Img src="img/logo.png" alt="logo" /> */}
+            <WhatshotIcon fontSize="large" />
+        </Link>
     )
 }
 

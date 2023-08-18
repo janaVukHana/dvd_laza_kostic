@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useStateContext } from '../contexts/ContextProvider';
 import { useRef, useState, useEffect } from 'react';
 import TouchAppIcon from '@mui/icons-material/TouchApp';
-
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import ImageHero from "./ImageHero";
 
 import { AnimationOnScroll } from 'react-animation-on-scroll';
@@ -145,6 +145,7 @@ const Home = () => {
                             <SpanFontWeight>D</SpanFontWeight>ruštvo&nbsp;
                             - Novi Sad</Subtitle>
                     </AnimationOnScroll>
+                    <HorizontalRuleIcon fontSize="large" sx={{ color: '#fff' }} />
                     <AnimationOnScroll animateIn="animate__fadeInUp" delay={1000} animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>
                         <Desc>
                             Bezbednost zajednice. <SpanColor>Humanost.</SpanColor> Akcija.<br /> 
