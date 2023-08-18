@@ -27,6 +27,7 @@ const Container = styled.div`
     max-width: 992px;
     padding: 1rem;
     border-radius: 6px;
+    border-radius: 20% 8px 20% 8px;
     background-color: rgba(0,128,128, 0.7);
 `
 
