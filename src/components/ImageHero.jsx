@@ -5,7 +5,7 @@ import firemanImage from '../assets/firedep/fireman.png';
 
 const Img = styled.img`
     opacity: 0;
-    transition: 1s linear;
+    transition: 1s cubic-bezier(.07,.34,.94,.1);
 `
 
 const ImageHero = () => {
