@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useForm } from 'react-hook-form'
 import { useStateContext } from '../contexts/ContextProvider';
 import React, { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
@@ -6,7 +7,9 @@ import NoviSadMap from "./NoviSadMap";
 import Notification from './Notification'
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 
+import TextField from '@mui/material/TextField';
 import ForwardIcon from '@mui/icons-material/Forward';
+import Spinner from "./Spinner";
 
 const Section = styled.section`
   height: 100vh;
@@ -55,36 +58,12 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background-color: rgba(0,128,128,0.3);
+  background-color: rgba(255,255,255,0.5);
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7); 
 
   @media (max-width: 992px) {
     width: 95%;
     margin: auto;
-  }
-`
-
-const Input = styled.input`
-  width: 100%;
-  border: 1px solid #008080;
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 0.5rem;
-
-  &:focus {
-    outline: none;
-  }
-`
-
-const Textarea = styled.textarea`
-  width: 100%;
-  padding: 20px;
-  border: 1px solid #008080;
-  border-radius: 5px;
-  margin-bottom: 0.5rem;
-
-  &:focus {
-    outline: none;
   }
 `
 
@@ -138,37 +117,60 @@ const Right = styled.div`
 `
 
 const Contact = () => {
+
+  const {register, handleSubmit, reset, watch, formState: { errors }} = useForm({mode: 'onChange'})
+
+  const [sending, setSending] = useState(false)
   const {setActive} = useStateContext()
   const ref = useRef();
   const formRef = useRef();
   const [success, setSuccess] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Validate form fields
-    const name = formRef.current.name.value.trim();
-    const email = formRef.current.email.value.trim();
-    const message = formRef.current.message.value.trim();
-
-    if (!name || !email || !message) {
-      // If any of the required fields are empty
-      setSuccess(false);
-      return;
+  useEffect(() => {
+    if(sending) {
+        document.body.style.overflow = 'hidden'
     }
+    else {
+        document.body.style.overflow = 'visible'
+    }
+  }, [sending])
 
-    // TODO: Additional validation logic
-    // ...
+  const registerOptions = {
+    name: {
+        required: 'Obavezno polje.',
+        minLength: {
+            value: 3,
+            message: 'Ime mora biti minimum 3 karaktera.'
+        }
+    },
+    email: {required: 'Obavezno polje.'},
+    message: {
+        required: 'Obavezno polje.',
+        minLength: {
+            value: 20,
+            message: 'Poruka mora biti minumum 20 karaktera'
+        },
+        maxLength: {
+            value: 1000,
+            message: 'Maksimalno 1000 karaktera.'
+        }
+    }
+  }
 
-    // Send form data using emailjs
+  const handleError = (errors) => {}
+
+  const handleMessage = (e) => {
+    setSending(true)
     emailjs.sendForm('service_h2f12xb', 'template_rgj08vb', formRef.current, 'UWirvxxXyA94uge89')
       .then((result) => {
         console.log(result.text);
         setSuccess(true);
         formRef.current.reset();
+        setSending(false)
       }, (error) => {
         console.log(error.text);
         setSuccess(false);
+        setSending(false)
       });
   }
 
@@ -206,18 +208,52 @@ const Contact = () => {
       <Container>
         <Left>
           <AnimationOnScroll animateIn="animate__fadeInUp" animateOut="animate__fadeOutDown">
-            <Form ref={formRef} onSubmit={handleSubmit}>
+            <Form ref={formRef} onSubmit={handleSubmit(handleMessage, handleError)}>
                 <Title>Kontakt</Title>
               
-                <Input placeholder="Ime" name="name" />
-                <Input type="email" placeholder="Email" name="email" />
-                <Textarea placeholder="Napiši poruku" rows="7" name="message" />
+                <TextField
+                        fullWidth
+                        variant="outlined"
+                        label="Ime"
+                        error={!!errors?.name}
+                        helperText={errors?.name && errors.name.message}
+                        id="name"
+                        name="name"
+                        {...register('name', registerOptions.name)}
+                    />
+                <TextField
+                        fullWidth
+                        variant="outlined"
+                        label="Email"
+                        error={!!errors?.email}
+                        helperText={errors?.email && errors.email.message}
+                        id="email"
+                        name="email"
+                        type="email"
+                        {...register('email', registerOptions.email)}
+                    />
+                <TextField
+                        fullWidth
+                        variant='outlined'
+                        label="Poruka"
+                        error={!!errors?.message}
+                        helperText={errors?.message && errors.message.message}
+                        id="message"
+                        name="message"
+                        multiline
+                        rows={4}
+                        inputProps={{
+                            style: {
+                                whiteSpace: 'pre-wrap'
+                            }
+                        }}
+                        {...register('message', registerOptions.message)}
+                    />
                 <CheckboxWrapper>
                   <CheckboxInput type="checkbox" name="checkbox" value='Zelim da postanem clan DVD' />
                   <CheckboxLabel>Želim da postanem dobrovoljni vatrogasac.</CheckboxLabel>
                 </CheckboxWrapper>
-                <Button><ForwardIcon /> Pošalji</Button>
-                {success && <Notification />}
+                <Button type="submit"><ForwardIcon /> Pošalji</Button>
             </Form>
           </AnimationOnScroll>
         </Left>
@@ -225,6 +261,10 @@ const Contact = () => {
           <NoviSadMap />
         </Right>
       </Container>
+      {/* While sending data show Spinner and prevent user to do anything! */}
+      {sending && <Spinner />}
+      {/* Show message is data is send with success */}
+      {success && <Notification />}
     </Section>
   );
 }
