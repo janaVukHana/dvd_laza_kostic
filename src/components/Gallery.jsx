@@ -93,6 +93,11 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
 `
+
+const CssAnimationOnScroll = styled(AnimationOnScroll) ({
+  width: '960px'
+})
+
 const Gallery =() => {
 
     const { setActive } = useStateContext();
@@ -124,25 +129,25 @@ const Gallery =() => {
     return (
         <Section id='gallery' ref={ref}>
             <Container>
-            <AnimationOnScroll animateIn="animate__fadeInLeft" animateOut="animate__fadeOutLeft">
+            <CssAnimationOnScroll animateIn="animate__fadeInLeft" animateOut="animate__fadeOutLeft">
 
                 <ImageList
-                    sx={{ width: '95%', height: 'auto', maxWidth: 600 }}
+                    sx={{ width: '95%', height: 'auto', maxWidth: 960 }}
                     variant="quilted"
                     cols={4}
-                    rowHeight={121}
+                    rowHeight={200}
                     >
                         {itemData.map((item) => (
                             <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
                             <img
-                                {...srcset(item.img, 121, item.rows, item.cols)}
+                                {...srcset(item.img, 200, item.rows, item.cols)}
                                 alt={item.title}
                                 loading="lazy"
                             />
                             </ImageListItem>
                         ))}
                 </ImageList>
-                </AnimationOnScroll>
+                </CssAnimationOnScroll>
             </Container>
         </Section>
     )
