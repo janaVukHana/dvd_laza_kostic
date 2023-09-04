@@ -5,7 +5,8 @@ import firemanImage from '../assets/firedep/fireman.png';
 
 const Img = styled.img`
     opacity: 0;
-    transition: 0.5s cubic-bezier(.04,.95,1,.53);
+    transition: 0.5s linear;
+    // transition: 0.5s cubic-bezier(.04,.95,1,.53);
 `
 
 const ImageHero = () => {
@@ -16,7 +17,7 @@ const ImageHero = () => {
         position: 'fixed',
         bottom: 0,
         right: 0,
-        zIndex: '5'
+        zIndex: '5',
     })
 
     useEffect(() => {
@@ -38,8 +39,10 @@ const ImageHero = () => {
             })
             
             // Change image opacity. Transition is 1sec
-            setImageOpacity(1)
-        }, 1000)
+            setTimeout(() => {
+                setImageOpacity(1)
+            },1000)
+        }, 1)
 
     }, [active]);
 

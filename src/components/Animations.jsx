@@ -31,12 +31,12 @@ const Section = styled.div`
 `
 
 const Container = styled.div`
-    width: 80%;
-    height: 100%;
-    max-width: 992px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;: 
+  width: 80%;
+  height: 100%;
+  max-width: 992px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 
 const Left = styled.div`

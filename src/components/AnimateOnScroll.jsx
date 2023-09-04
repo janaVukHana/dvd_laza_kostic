@@ -75,8 +75,8 @@ const AnimateOnScroll = () => {
             <Left>
                 <h2>Left</h2>
                 <AnimationOnScroll animateIn="animate__bounceIn">
-          <h2>Some Text</h2>
-        </AnimationOnScroll>
+                    <h2>Some Text</h2>
+                </AnimationOnScroll>
             </Left>
             <Right>
               OnScroll
