@@ -21,7 +21,9 @@
     "react-hook-form": "^7.45.4",
     "react-scroll-snap": "^1.0.0",
     "react-simple-maps": "^3.0.0",
+    "react-slick": "^0.29.0",
     "react-use-scroll-snap": "^0.0.4",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^6.0.3"
   },
   "devDependencies": {

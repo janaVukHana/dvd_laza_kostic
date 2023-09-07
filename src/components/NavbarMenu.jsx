@@ -36,6 +36,7 @@ const Link = styled.a`
 
 const NavbarMenu = () => {
     const {active, showMenu, setShowMenu} = useStateContext()
+    console.log(active);
 
     useEffect(() => {
         if(window.innerWidth < 768) {
@@ -63,8 +64,6 @@ const NavbarMenu = () => {
         }
       }
 
-    console.log('showMenu: ',showMenu);
-
     return (
         <>
             {showMenu && 
@@ -72,7 +71,8 @@ const NavbarMenu = () => {
                     <ListItem><Link onClick={handleClick} href="#home" className={active === 'home' ? 'active':''}>Početna</Link></ListItem>
                     <ListItem><Link onClick={handleClick} href="#service" className={active === 'service' ? 'active':''}>Aktivnosti</Link></ListItem>
                     <ListItem><Link onClick={handleClick} href="#donations" className={active === 'donations' ? 'active':''}>Donacije</Link></ListItem>
-                    <ListItem><Link onClick={handleClick} href="#gallery" className={active === 'gallery' ? 'active':''}>Galerija</Link></ListItem>
+                    {/* <ListItem><Link onClick={handleClick} href="#gallery" className={active === 'gallery' ? 'active':''}>Galerija</Link></ListItem> */}
+                    <ListItem><Link onClick={handleClick} href="#carousel" className={active === 'carousel' ? 'active':''}>Carousel</Link></ListItem>
                     <ListItem><Link onClick={handleClick} href="#contact" className={active === 'contact' ? 'active':''}>Kontakt</Link></ListItem>
                 </List>
             }

@@ -6,7 +6,8 @@ import Home from './components/Home'
 import Service from './components/Service'
 import Donations from './components/Donations'
 import Contact from './components/Contact'
-import Gallery from './components/Gallery'
+// import Gallery from './components/Gallery'
+import Carousel from './components/Carousel'
 
 const Container = styled.div`
   height: 100%;
@@ -21,7 +22,8 @@ function App() {
         <Home />
         <Service />
         <Donations />
-        <Gallery />
+        {/* <Gallery /> */}
+        <Carousel />
         <Contact />
       </Container>
       <Footer />

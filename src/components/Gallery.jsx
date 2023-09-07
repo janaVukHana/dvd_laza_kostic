@@ -98,13 +98,13 @@ const CssAnimationOnScroll = styled(AnimationOnScroll) ({
   width: '960px'
 })
 
-const Gallery =() => {
+const Gallery = () => {
 
     const { setActive } = useStateContext();
     const ref = useRef();
 
     useEffect(() => {
-        const id = document.getElementById('gallery').id;
+        const id = document.getElementById("gallery").id;
         const observer = new IntersectionObserver(
             ([entry]) => {
                 entry.isIntersecting && setActive(id);
@@ -129,7 +129,7 @@ const Gallery =() => {
     return (
         <Section id='gallery' ref={ref}>
             <Container>
-            <CssAnimationOnScroll animateIn="animate__fadeInLeft" animateOut="animate__fadeOutLeft">
+              <CssAnimationOnScroll animateIn="animate__fadeInLeft" animateOut="animate__fadeOutLeft">
 
                 <ImageList
                     sx={{ width: '95%', height: 'auto', maxWidth: 960 }}
@@ -147,7 +147,7 @@ const Gallery =() => {
                             </ImageListItem>
                         ))}
                 </ImageList>
-                </CssAnimationOnScroll>
+              </CssAnimationOnScroll>
             </Container>
         </Section>
     )
