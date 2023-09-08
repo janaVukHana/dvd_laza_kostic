@@ -16,9 +16,13 @@ import fireman3 from '../assets/firedep/fireman_3.png';
 
 const Img = styled.img`
     width: auto;
+    max-width: 100%;
     height: 500px;
     margin: 0 auto;
-    border: 1px solid red;
+
+    @media (max-width: 768px) {
+        height: 300px;
+      }
 `
 
 const Section = styled.section`
@@ -43,9 +47,9 @@ const Container = styled.div`
     margin: auto;
     max-width: 992px;
     padding: 1rem;
-    border-radius: 6px;
-    border-radius: 20% 8px 20% 8px;
-    background-color: rgba(0,128,128, 0.7);
+    // border-radius: 6px;
+    // border-radius: 20% 8px 20% 8px;
+    // background-color: rgba(0,128,128, 0.7);
 `
 
 const Carousel = () => {

@@ -72,7 +72,7 @@ const NavbarMenu = () => {
                     <ListItem><Link onClick={handleClick} href="#service" className={active === 'service' ? 'active':''}>Aktivnosti</Link></ListItem>
                     <ListItem><Link onClick={handleClick} href="#donations" className={active === 'donations' ? 'active':''}>Donacije</Link></ListItem>
                     {/* <ListItem><Link onClick={handleClick} href="#gallery" className={active === 'gallery' ? 'active':''}>Galerija</Link></ListItem> */}
-                    <ListItem><Link onClick={handleClick} href="#carousel" className={active === 'carousel' ? 'active':''}>Carousel</Link></ListItem>
+                    <ListItem><Link onClick={handleClick} href="#carousel" className={active === 'carousel' ? 'active':''}>Galerija</Link></ListItem>
                     <ListItem><Link onClick={handleClick} href="#contact" className={active === 'contact' ? 'active':''}>Kontakt</Link></ListItem>
                 </List>
             }
