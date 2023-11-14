@@ -6,8 +6,6 @@ const StateContext = createContext({
     setActive: () => {},
     showMenu: null,
     setShowMenu: () => {},
-    // loading: null,
-    // setLoading: () => {}
 })
 
 // Now create context provider
@@ -21,16 +19,12 @@ export const ContextProvider = ({children}) => {
         return false
     })
     
-    // const [loading, setLoading] = useState(false)
-
     return (
         <StateContext.Provider value={{
             active,
             setActive,
             showMenu,
             setShowMenu
-            // loading,
-            // setLoading
         }}>
             {children}
         </StateContext.Provider>

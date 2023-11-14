@@ -8,7 +8,7 @@ const Section = styled.nav`
     top: 0;
     left: 0;
     z-index: 999;
-    background-color: rgba(0, 128, 128, 0.5);
+    background-color: rgba(190, 49, 68, 0.5);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@ const Section = styled.nav`
 `
 
 const Container = styled.div`
-    width: 80%;
+    width: 95%;
     max-width: 992px;
     padding: 0.5rem 0;
     display: flex;

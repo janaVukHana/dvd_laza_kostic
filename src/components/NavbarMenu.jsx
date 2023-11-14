@@ -13,7 +13,7 @@ const List = styled.ul`
         top: 69px;
         width: 100%;
         height: calc(100vh - 69px);
-        background-color: #008080;
+        background-color: #be3144;
       }
 `
 const ListItem = styled.li`
@@ -36,7 +36,6 @@ const Link = styled.a`
 
 const NavbarMenu = () => {
     const {active, showMenu, setShowMenu} = useStateContext()
-    console.log(active);
 
     useEffect(() => {
         if(window.innerWidth < 768) {
@@ -69,10 +68,11 @@ const NavbarMenu = () => {
             {showMenu && 
                 <List>
                     <ListItem><Link onClick={handleClick} href="#home" className={active === 'home' ? 'active':''}>Početna</Link></ListItem>
-                    <ListItem><Link onClick={handleClick} href="#service" className={active === 'service' ? 'active':''}>Aktivnosti</Link></ListItem>
-                    <ListItem><Link onClick={handleClick} href="#donations" className={active === 'donations' ? 'active':''}>Donacije</Link></ListItem>
+                    <ListItem><Link onClick={handleClick} href="#aboutUs" className={active === 'aboutUs' ? 'active':''}>O Nama</Link></ListItem>
+                    <ListItem><Link onClick={handleClick} href="#services" className={active === 'services' ? 'active':''}>Usluge</Link></ListItem>
+                    <ListItem><Link onClick={handleClick} href="#ourteam" className={active === 'ourteam' ? 'active':''}>Naš tim</Link></ListItem>
                     {/* <ListItem><Link onClick={handleClick} href="#gallery" className={active === 'gallery' ? 'active':''}>Galerija</Link></ListItem> */}
-                    <ListItem><Link onClick={handleClick} href="#carousel" className={active === 'carousel' ? 'active':''}>Galerija</Link></ListItem>
+                    {/* <ListItem><Link onClick={handleClick} href="#carousel" className={active === 'carousel' ? 'active':''}>Galerija</Link></ListItem> */}
                     <ListItem><Link onClick={handleClick} href="#contact" className={active === 'contact' ? 'active':''}>Kontakt</Link></ListItem>
                 </List>
             }

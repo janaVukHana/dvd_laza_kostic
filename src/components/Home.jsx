@@ -1,20 +1,8 @@
 import styled from "styled-components";
 import { useStateContext } from '../contexts/ContextProvider';
 import { useRef, useState, useEffect } from 'react';
-import TouchAppIcon from '@mui/icons-material/TouchApp';
-import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
-import ImageHero from "./ImageHero";
 
 import { AnimationOnScroll } from 'react-animation-on-scroll';
-
-const Section = styled.header`
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #008080;
-    background-image: linear-gradient(#008080, #fff);
-`
 
 const Container = styled.div`
     width: 95%;
@@ -23,74 +11,36 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-`
+    gap: 1rem;
 
-const Left = styled.div`
-    flex: 2;
-`
-
-const Title = styled.h1`
-    font-family: 'Playfair Display', serif;
-    font-size: 3.6rem;
-    color: #fff;
-    margin-bottom: 1rem;
-
-    @media (max-width: 768px) {
-        font-size: 2rem;
-      }
-`
-
-const Subtitle = styled.h2`
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #fff;
-    margin-bottom: 3rem;
-
-    @media (max-width: 768px) {
-        font-size: 1rem;
-      }
-`
-
-const Desc = styled.p`
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 2.5rem;
-
-    @media (max-width: 768px) {
-        font-size: 1rem;
-      }
-`
-
-const Button = styled.a`
-    color: #fff;
-    background-color: #008080;
-    font-weight: 700;
-    text-decoration: none;
-    border: 2px solid #008080;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    display: flex;
-    width: auto;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7); 
-    transition: 0.25s ease all;
-
-    &:hover {
-        color: #008080;
-        border-color: #008080;
-        background-color: #fff;
+    @media(max-width: 600px) {
+        padding-top: 6rem;
+        flex-direction: column;
     }
 `
 
-const SpanColor = styled.span`
-    color: #008080;
+const Left = styled.div`
+    flex: 1;
+    overflow: hidden;
+`
+const Right = styled.div`
+    flex: 1;
+    overflow: hidden;
 `
 
-const SpanFontWeight = styled.span`
+const Desc = styled.p`
+    font-size: 2.8rem;
     font-weight: 700;
+    color: #be3144;
+    margin-bottom: 2.5rem;
+
+    @media (max-width: 992px) {
+        font-size: 2.1rem;
+      }
+
+    @media(max-width: 768px) {
+        font-size: 1.8rem;
+    }
 `
 
 const Home = () => {
@@ -132,35 +82,25 @@ const Home = () => {
     }, []);
 
     return (
-        <Section id="home" ref={ref}>
+        <section ref={ref} id="home">
             <Container>
                 <Left>
-                    <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>
-                        <Title>DVD&nbsp;<span style={{color: '#008080'}}>dr&nbsp;Laza&nbsp;Kostić</span></Title>
-                    </AnimationOnScroll>
-                    <AnimationOnScroll animateIn="animate__fadeInUp" delay={500} animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>
-                        <Subtitle>
-                            <SpanFontWeight>D</SpanFontWeight>obrovoljno&nbsp;
-                            <SpanFontWeight>V</SpanFontWeight>atrogasno&nbsp;
-                            <SpanFontWeight>D</SpanFontWeight>ruštvo&nbsp;
-                            - Novi Sad</Subtitle>
-                    </AnimationOnScroll>
-                    <HorizontalRuleIcon fontSize="large" sx={{ color: '#fff' }} />
                     <AnimationOnScroll animateIn="animate__fadeInUp" delay={1000} animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>
                         <Desc>
-                            Bezbednost zajednice. <SpanColor>Humanost.</SpanColor> Akcija.<br /> 
-                            Solidarnost. <SpanColor>Pomoć drugima.</SpanColor><br />
-                            <SpanColor>Adrenalinski izazov.</SpanColor> Služenje zajednici.<br />
-                            Bezbednost zajednice. <SpanColor>Sigurnost.</SpanColor><br />
+                            Prevencija, sprečavanje i saniranje posledica požara, poplava i drugih vanrednih situacija.
                         </Desc>
                     </AnimationOnScroll>
                     <AnimationOnScroll animateIn="animate__fadeInUpBig" delay={1000} animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>
-                        <Button href="#contact"><TouchAppIcon /> Pridruži nam se!</Button>
+                        <a className="btn" href="https://vsgns.rs/postani-vatrogasac" target="_blank">
+                             POSTANI DOBROVOLJNI VATROGASAC
+                        </a>
                     </AnimationOnScroll>
                 </Left>
-                <ImageHero />
+                <Right>
+                    <img src="img/dvd/hero.jpeg" />
+                </Right>
             </Container>
-        </Section>
+        </section>
     )
 }
 

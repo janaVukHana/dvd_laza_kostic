@@ -1,11 +1,13 @@
 .Hamburger {
+    display: none; /*Hide on large screens*/
     background-color: transparent ;
     position: relative;
-    width: 40px;
-    cursor: pointer;
-    display: none; /*Hide on large screens*/
+    width: 50px;
+    border: 2px solid #fff;
+    padding: 0.5rem;
     margin-top: .5rem;
     margin-bottom: .5rem;
+    cursor: pointer;
 }
 
 .Hamburger span {
