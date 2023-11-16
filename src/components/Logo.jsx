@@ -28,11 +28,12 @@ const Link = styled.a`
     }
 `
 
-const Span = styled.span`
+const H1 = styled.h1`
+    font-size: 1rem;
+    
     @media(max-width: 992px) {
         font-size: 0.7rem;
     }
-    // font-size: 1rem;
 `
 
 const Logo = () => {
@@ -45,11 +46,11 @@ const Logo = () => {
     return (
         <Link href="#home" onClick={handleClick}>
             <Img src="img/dvd/logo.jpg" alt="firefighters logo" />
-            <Span>
+            <H1>
                 DOBROVOLJNO VATROGASNO DRUŠTVO <br />
                 "DR LAZA KOSTIĆ"
                 NOVI SAD
-            </Span>
+            </H1>
             {/* <WhatshotIcon fontSize="large" /> */}
         </Link>
     )

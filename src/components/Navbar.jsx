@@ -3,7 +3,7 @@ import Logo from './Logo'
 import NavbarMenu from './NavbarMenu'
 import Hamburger from './Hamburger'
 
-const Section = styled.nav`
+const Header = styled.header`
     position: fixed;
     top: 0;
     left: 0;
@@ -17,7 +17,7 @@ const Section = styled.nav`
 
 `
 
-const Container = styled.div`
+const Nav = styled.nav`
     width: 95%;
     max-width: 992px;
     padding: 0.5rem 0;
@@ -28,13 +28,13 @@ const Container = styled.div`
 
 const Navbar = () => {
     return (
-        <Section>
-            <Container>
+        <Header>
+            <Nav>
                 <Logo />
                 <NavbarMenu />
                 <Hamburger />
-            </Container>
-        </Section>
+            </Nav>
+        </Header>
     )
 }
 
