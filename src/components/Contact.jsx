@@ -101,7 +101,7 @@ const Contact = () => {
 
                         <ContactInfo>
                             <h3>Telefon</h3>
-                            <Link href="tel:+123456789" itemProp="telephone">065 252 09 96</Link>
+                            <Link href="tel:+381652520996" itemProp="telephone">065 252 09 96</Link>
                         </ContactInfo>
 
                         <ContactInfo>
@@ -109,12 +109,15 @@ const Contact = () => {
                             <Link href="mailto:dvdlazakostic@vsgns.rs" itemProp="email">dvdlazakostic@vsgns.rs</Link>
                         </ContactInfo>
                     </AnimationOnScroll>
-                    <AnimationOnScroll animateIn="animate__fadeInUpBig" delay={2000} animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>
+                    <AnimationOnScroll animateIn="animate__fadeInUpBig" delay={1500} animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>
                         <a className="btn" href="https://vsgns.rs/postani-vatrogasac" target="_blank">POSTANI DOBROVOLJNI VATROGASAC</a>
                     </AnimationOnScroll>
                 </Left>
                 <Right>
+                <AnimationOnScroll animateIn="animate__fadeInUpBig" delay={1} animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>
+
                     <img src="img/dvd/office.jpg" />
+                </AnimationOnScroll>
                 </Right>
             </Container>
         </section>

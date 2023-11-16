@@ -97,7 +97,9 @@ const Home = () => {
                     </AnimationOnScroll>
                 </Left>
                 <Right>
+                <AnimationOnScroll animateIn="animate__fadeInUp" delay={1000} animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>
                     <img src="img/dvd/hero.jpeg" />
+                </AnimationOnScroll>
                 </Right>
             </Container>
         </section>
