@@ -19,7 +19,7 @@ const Link = styled.a`
     text-decoration: none;
 
     &:hover {
-        transform: scale(1.2);
+        transform: scale(1.05);
     }
 
     @media(max-width: 992px) {
@@ -44,7 +44,7 @@ const Logo = () => {
 
     return (
         <Link href="#home" onClick={handleClick}>
-            <Img src="img/dvd/logo.jpg" alt="logo" />
+            <Img src="img/dvd/logo.jpg" alt="firefighters logo" />
             <Span>
                 DOBROVOLJNO VATROGASNO DRUŠTVO <br />
                 "DR LAZA KOSTIĆ"

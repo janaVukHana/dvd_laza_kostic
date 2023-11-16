@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { useStateContext } from '../contexts/ContextProvider';
-import { useRef, useEffect, useState } from 'react';
+import { useRef } from 'react';
 
 import { AnimationOnScroll } from 'react-animation-on-scroll';
+import usePageLoadAnimation from "../helpers/usePageLoadAnimation";
+import useIntersectionObserver from "../helpers/useIntersectionObserver";
 
 const Container = styled.div`
     width: 95%;
@@ -12,7 +14,7 @@ const Container = styled.div`
 `
 
 const ImageContainer = styled.div`
-    width: 300;
+    width: 300px;
     height: 500px;
     float: left;
     margin-right: 2rem;
@@ -27,47 +29,19 @@ const ImageContainer = styled.div`
 const AboutUs = () => {
     const { setActive } = useStateContext();
     const ref = useRef();
+    const sectionId = 'aboutUs'
     
     // Fixing on page load animation
-    const [shouldAnimatePreScroll, setShouldAnimatePreScroll] = useState(false);
+    const shouldAnimatePreScroll = usePageLoadAnimation()
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShouldAnimatePreScroll(true);
-        }, 1);
-
-        return () => clearTimeout(timer);
-    }, []);
-
-    useEffect(() => {
-        const id = document.getElementById('aboutUs').id;
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                entry.isIntersecting && setActive(id);
-            },
-            {
-                rootMargin: "0px",
-                threshold: 0.5 // Change this threshold value as per your requirement
-            }
-        );
-    
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
-    
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
-            }
-        };
-    }, []);
+    useIntersectionObserver(ref, sectionId, setActive)
 
   return (
     <section ref={ref} id="aboutUs" style={{backgroundColor: 'var(--primary-red)'}}>
       <Container>
         <AnimationOnScroll animateIn="animate__fadeInUp" delay={1} animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>
             <ImageContainer>
-                <img src="img/dvd/laza-kostic.jpg" alt="dr Laza Kostic" />
+                <img src="img/dvd/laza-kostic.jpg" alt="dr Laza Kostic" loading="lazy" />
             </ImageContainer>
         </AnimationOnScroll>
         <AnimationOnScroll animateIn="animate__fadeInUp" delay={1} animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>

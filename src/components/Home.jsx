@@ -1,21 +1,17 @@
 import styled from "styled-components";
 import { useStateContext } from '../contexts/ContextProvider';
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 
+import { containerStyles } from "../sharedStyles";
 import { AnimationOnScroll } from 'react-animation-on-scroll';
+import usePageLoadAnimation from "../helpers/usePageLoadAnimation";
+import useIntersectionObserver from "../helpers/useIntersectionObserver";
 
 const Container = styled.div`
-    width: 95%;
-    height: 100%;
-    max-width: 992px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    ${containerStyles}
 
     @media(max-width: 600px) {
         padding-top: 6rem;
-        flex-direction: column;
     }
 `
 
@@ -45,41 +41,13 @@ const Desc = styled.p`
 
 const Home = () => {
     // Fixing on page load animation
-    const [shouldAnimatePreScroll, setShouldAnimatePreScroll] = useState(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShouldAnimatePreScroll(true);
-        }, 1);
-
-        return () => clearTimeout(timer);
-    }, []);
+    const shouldAnimatePreScroll = usePageLoadAnimation();
 
     const { setActive } = useStateContext();
     const ref = useRef();
+    const sectionId = 'home';
 
-    useEffect(() => {
-        const id = document.getElementById('home').id;
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                entry.isIntersecting && setActive(id);
-            },
-            {
-                rootMargin: "0px",
-                threshold: 0.5 // Change this threshold value as per your requirement
-            }
-        );
-
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
-
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
-            }
-        };
-    }, []);
+    useIntersectionObserver(ref, sectionId, setActive)
 
     return (
         <section ref={ref} id="home">
@@ -98,7 +66,7 @@ const Home = () => {
                 </Left>
                 <Right>
                 <AnimationOnScroll animateIn="animate__fadeInUp" delay={1000} animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>
-                    <img src="img/dvd/hero.jpeg" />
+                    <img src="img/dvd/hero.jpeg" alt="firefighters" loading="lazy" />
                 </AnimationOnScroll>
                 </Right>
             </Container>

@@ -1,22 +1,15 @@
 import styled from "styled-components";
 import { useStateContext } from '../contexts/ContextProvider';
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 
+import { containerStyles, redTextStyles } from "../sharedStyles";
 import { AnimationOnScroll } from 'react-animation-on-scroll';
+import usePageLoadAnimation from "../helpers/usePageLoadAnimation";
+import useIntersectionObserver from "../helpers/useIntersectionObserver";
 
 const Container = styled.div`
-    color: var(--primary-red);
-    width: 95%;
-    height: 100%;
-    max-width: 992px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-
-    @media(max-width: 600px) {
-        flex-direction: column;
-    }
+    ${containerStyles};
+    ${redTextStyles};
 `
 
 const Left = styled.div`
@@ -50,41 +43,37 @@ const ContactInfo = styled.div`
 
 const Contact = () => {
     // Fixing on page load animation
-    const [shouldAnimatePreScroll, setShouldAnimatePreScroll] = useState(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShouldAnimatePreScroll(true);
-        }, 1);
-
-        return () => clearTimeout(timer);
-    }, []);
+    const shouldAnimatePreScroll = usePageLoadAnimation()
 
     const { setActive } = useStateContext();
     const ref = useRef();
+    const sectionId = 'contact'
+  
+    useIntersectionObserver(ref, sectionId, setActive)
 
-    useEffect(() => {
-        const id = document.getElementById('contact').id;
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                entry.isIntersecting && setActive(id);
-            },
-            {
-                rootMargin: "0px",
-                threshold: 0.5 // Change this threshold value as per your requirement
-            }
-        );
 
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
+    // useEffect(() => {
+    //     const id = document.getElementById('contact').id;
+    //     const observer = new IntersectionObserver(
+    //         ([entry]) => {
+    //             entry.isIntersecting && setActive(id);
+    //         },
+    //         {
+    //             rootMargin: "0px",
+    //             threshold: 0.5 // Change this threshold value as per your requirement
+    //         }
+    //     );
 
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
-            }
-        };
-    }, []);
+    //     if (ref.current) {
+    //         observer.observe(ref.current);
+    //     }
+
+    //     return () => {
+    //         if (ref.current) {
+    //             observer.unobserve(ref.current);
+    //         }
+    //     };
+    // }, []);
 
     return (
         <section ref={ref} id="contact">
@@ -116,7 +105,7 @@ const Contact = () => {
                 <Right>
                 <AnimationOnScroll animateIn="animate__fadeInUpBig" delay={1} animateOnce={true} animatePreScroll={shouldAnimatePreScroll}>
 
-                    <img src="img/dvd/office.jpg" />
+                    <img src="img/dvd/office.jpg" alt="firefighters in office" loading="lazy" />
                 </AnimationOnScroll>
                 </Right>
             </Container>
